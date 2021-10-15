@@ -1,7 +1,7 @@
 import React from "react";
 import { Text, View, StyleSheet } from "react-native";
 
-const Exercise1Component = (props) => {
+const Exercise1 = (props) => {
   const name = "Rafael";
 
   return (
@@ -20,4 +20,4 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
 });
- export default Exercise1Component;
+export default Exercise1;
