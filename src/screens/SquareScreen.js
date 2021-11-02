@@ -7,32 +7,57 @@ const SquareScreen = () => {
   const [blue, setBlue] = useState(0);
   const [green, setGreen] = useState(0);
 
+  const COLOR_INCREMENT = 15;
+
+  const setColor = (color, change) => {
+    console.log(change);
+    switch (color) {
+      case "red":
+        red + change > 255 || red + change < 0
+          ? null
+          : setRed((prevState) => prevState + change);
+        break;
+      case "green":
+        green + change > 255 || green + change < 0
+          ? null
+          : setGreen((prevState) => prevState + change);
+        break;
+      case "blue":
+        blue + change > 255 || blue + change < 0
+          ? null
+          : setBlue((prevState) => prevState + change);
+        break;
+      default:
+        break;
+    }
+  };
+
   return (
     <View>
       <ColorCounter
         onIncrease={() => {
-          setRed((prevState) => prevState + 1);
+          setColor("red", COLOR_INCREMENT);
         }}
         onDecrease={() => {
-          setRed((prevState) => prevState + 1);
+          setColor("red", -1 * COLOR_INCREMENT);
         }}
         color="Red"
       />
       <ColorCounter
         onIncrease={() => {
-          setBlue((prevState) => prevState + 1);
+          setColor("blue", COLOR_INCREMENT);
         }}
         onDecrease={() => {
-          setBlue((prevState) => prevState + 1);
+          setColor("blue", -1 * COLOR_INCREMENT);
         }}
         color="Blue"
       />
       <ColorCounter
         onIncrease={() => {
-          setGreen((prevState) => prevState + 1);
+          setColor("green", COLOR_INCREMENT);
         }}
         onDecrease={() => {
-          setGreen((prevState) => prevState + 1);
+          setColor("green", -1 * COLOR_INCREMENT);
         }}
         color="Green"
       />
