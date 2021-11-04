@@ -13,11 +13,13 @@ const BoxScreen = () => {
 
 const styles = StyleSheet.create({
   viewStyle: {
-    borderWidth: 3,
-    borderColor: "black",
-
+    borderWidth: 7,
+    borderColor: "green",
+    height: "100%",
+    //justifyContent: "center",
+    //justifyContent: "space-between",
+    justifyContent: "space-around",
     flexDirection: "row",
-    height: 200
   },
   textStyle: {
     borderWidth: 3,
